@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/sprite.js"></script>
+<script src="js/player.js"></script>
+<script src="js/engine.js"></script>
+<script>
+$(function() {
+	var engine = new Engine(new Player("bluePlayer", document.body));
+	
+	$("img").hide();
+});
+</script>
+</head>
+<body>
+<img src="images/running.png"/>
+
+</body>
+</html>
