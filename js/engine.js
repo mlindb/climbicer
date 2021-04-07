@@ -1,8 +1,8 @@
 function Engine(player) {
-	var $document = $(document);
-	var direction;
-	var isMoving = false;
-	var isJumping = false;
+	const $document = $(document);
+	let direction;
+	let isMoving = false;
+	let isJumping = false;
 	
 	$document.bind("keydown keyup", function(e) {
 		console.log(e);

@@ -1,10 +1,10 @@
 function Player(id, container) {
-	var me = this;
+	const me = this;
 	
-	var playerSpriteImg = new Image();
+	const playerSpriteImg = new Image();
 	playerSpriteImg.src = "images/running.png";
 
-	var canvas = document.createElement("canvas");
+	const canvas = document.createElement("canvas");
 	canvas.width = 225;
 	canvas.height = 251;
 	canvas.id = id;
@@ -12,14 +12,14 @@ function Player(id, container) {
 	
 	container.appendChild(canvas);
 	
-	var $canvas = $(canvas);
+	const $canvas = $(canvas);
 
-	var sprite = new Sprite(document.getElementById(id).getContext('2d'), 
+	const sprite = new Sprite(document.getElementById(id).getContext('2d'), 
 		canvas.width, 
 		canvas.height, 
 		playerSpriteImg);
 		
-	var intervals = [];
+	const intervals = [];
 	
 	/*
 	Public interface starts here.
@@ -32,12 +32,12 @@ function Player(id, container) {
 	}
 	
 	me.move = function(direction, isJumping) {
-		var step = 0;
-		var horizontalOffset = me.getPosition().left;
-		var verticalOffset = me.getPosition().top;
-		var verticalVelocity = [-80, -40, -20, -10, -5, 0, 5, 10, 20, 40, 80];
-		var i = 0;
-		var velocity = 40;
+		let step = 0;
+		let horizontalOffset = me.getPosition().left;
+		let verticalOffset = me.getPosition().top;
+		let verticalVelocity = [-80, -40, -20, -10, -5, 0, 5, 10, 20, 40, 80];
+		let i = 0;
+		let velocity = 40;
 		
 		intervals.push(setInterval(function() {
 			// Calculate the offset based on direction
@@ -70,9 +70,9 @@ function Player(id, container) {
 			me.move(direction, true);
 		} else {
 			// If player is stationary, we can do a simple-type jump here.
-			var offset = me.getPosition().top;
-			var velocity = [-80, -40, -20, -10, -5, 0, 5, 10, 20, 40, 80];
-			var i = 0;
+			let offset = me.getPosition().top;
+			let velocity = [-80, -40, -20, -10, -5, 0, 5, 10, 20, 40, 80];
+			let i = 0;
 		
 			intervals.push(setInterval(function() {
 				if (i < velocity.length) {

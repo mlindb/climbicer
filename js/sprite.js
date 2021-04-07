@@ -1,5 +1,5 @@
 function Sprite(context, width, height, image) {
-	var me = this;
+	const me = this;
 				
 	me.context = context;
 	me.width = width;
